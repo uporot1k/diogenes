@@ -1,0 +1,10 @@
+<%- include("../header.ejs") %>
+	<h1><%=item.name%></h1>
+	<a href="/">Главная</a>/
+	<a href="/catalog">Каталог</a>/
+	<a href="/catalog/<%=section.code%>"><%=section.name%></a>/
+	<span><%=item.name%></span>
+	<hr>
+	<b><%=item.price%> руб.</b><br>
+	<img src="<%=item.foto%>">
+<%- include("../footer.ejs") %>

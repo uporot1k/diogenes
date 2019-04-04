@@ -1,0 +1,26 @@
+{
+  "name": "diogenes",
+  "version": "0.0.1",
+  "description": "Node.js CMS",
+  "main": "diogenes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antyas/diogenes.git"
+  },
+  "keywords": [
+    "cms"
+  ],
+  "author": "Antyaskin Roman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antyas/diogenes/issues"
+  },
+  "homepage": "https://github.com/Antyas/diogenes#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

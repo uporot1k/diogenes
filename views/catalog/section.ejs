@@ -1,0 +1,10 @@
+<%- include("../header.ejs") %>
+	<h1><%=section.name%></h1>
+	<a href="/">Главная</a>/
+	<a href="/catalog">Каталог</a>/
+	<span><%=section.name%></span>
+	<hr>
+	<% section.items.forEach( function(elem, i) {%>
+		<a href="/catalog/<%=section.code%>/<%=elem.code%>"><%=elem.name%></a><br>
+	<%});%>
+<%- include("../footer.ejs") %>
