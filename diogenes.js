@@ -7,6 +7,7 @@ const catalog = require('./routes/catalog');
 
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads') );
+app.use('/admin', express.static('admin/public') );
 app.set("view engine", "ejs");
 
 
@@ -15,7 +16,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/admin', function(req, res) {
-	res.render('{admin}/admin');
+	res.render('../admin/views/index');
 });
 
 app.use('/catalog', catalog);

@@ -30,7 +30,6 @@ router.get('/:section', function(req, res) {
 });
 
 router.get('/:section/:item', function(req, res) {
-  	res.render('catalog/item');
   	let section = {};
   	let item = {};
 	catalog.sections.forEach( function(elem, i) {
