@@ -2,7 +2,15 @@
 	<h1>Каталог</h1>
 	<a href="/">Главная</a><br>
 	<hr>
-	<% sections.forEach( function(elem, i) {%>
-		<a href="/catalog/<%=elem.code%>"><%=elem.name%></a><br>
-	<%});%>
+	<div class="grid">
+		<% for(var i=0; i < data.length; i++) { %>
+		<pre><%=data[i]%></pre>
+		<% } %>
+	</div>
+	<style>
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	</style>
 <%- include("../footer.ejs") %>

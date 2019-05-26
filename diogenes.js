@@ -26,9 +26,9 @@ app.get('/:page', function(req, res){
 	res.render( `${req.params.page}/index`);
 });
 
-mongoose.connect("mongodb://localhost:27017/diogenes", { useNewUrlParser: true }).then((err) => {
-    if(err) return console.log(err);
-    app.listen(80, function(){
-        console.log("Сервер запущен");
-    });
-});
+mongoose.connect("mongodb://localhost:27017/diogenes", { useNewUrlParser: true })
+	.then(() => {
+	    app.listen(80, function(){
+	        console.log("Сервер запущен");
+	    });
+	});

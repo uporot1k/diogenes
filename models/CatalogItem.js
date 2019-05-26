@@ -6,7 +6,8 @@ const catalogItem = new Schema(
 	    name: String,
 	    foto: String,
 	    code: String,
-	    price: Number
+	    price: Number,
+	    parents: [Schema.Types.ObjectId]
 	},
 	{ 
 		versionKey: false
