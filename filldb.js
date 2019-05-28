@@ -55,13 +55,13 @@ mongoose.connect("mongodb://localhost:27017/diogenes", { useNewUrlParser: true }
 			isSection: true
 		}
     ];
-    Catalog.collection.insertMany(items).then(()=> {
-    	console.log("Запись сделана");
-    	mongoose.disconnect();
+    Catalog.collection.deleteMany().then(()=> {
+    	console.log("Каталог отчищен");
+    	Catalog.collection.insertMany(items).then(()=> {
+    		console.log("Каталог записан");
+    		mongoose.disconnect();
+    	});
     });
-    // Catalog.collection.deleteMany().then(()=> {
-    // 	console.log("Запись сделана");
-    // 	mongoose.disconnect();
-    // });
+
     
 });

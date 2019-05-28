@@ -13,8 +13,9 @@ let catalog = new Schema(
 	    childrens: [Schema.Types.ObjectId]
 	},
 	{ 
-		versionKey: false
+		versionKey: false,
 	}
 );
+
 
 module.exports = mongoose.model('Catalog', catalog);

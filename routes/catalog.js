@@ -7,8 +7,8 @@ const Catalog = require('../models/Catalog');
 router.get('/', function(req, res) {
   	Catalog.find({}, function(err, data){
         if(err) return console.log(err);
+       	//res.send(data);
         res.render('catalog/index', { data });
-        console.log(data);
     });
 });
 
