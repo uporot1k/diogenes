@@ -4,11 +4,10 @@ const router = express.Router();
 const Catalog = require('../models/Catalog');
 
 
-router.get('/', function(req, res) {
+router.get('/:first', function(req, res) {
   	Catalog.find({}, function(err, data){
         if(err) return console.log(err);
-       	//res.send(data);
-        res.render('catalog/index', { data });
+       	res.render('about/index');
     });
 });
 

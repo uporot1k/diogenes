@@ -3,8 +3,12 @@ const app = express();
 const fs = require('fs');
 const mongoose = require("mongoose");
 
+var config = require('./config');
+
 //routers
 const catalog = require('./routes/catalog');
+
+app.disable('view cache');
 
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads') );
@@ -17,18 +21,18 @@ app.get('/', function(req, res) {
 });
 
 app.get('/admin', function(req, res) {
-	res.render('../admin/views/index');
+	res.render('../adminTest/views/index');
 });
 
-app.use('/catalog', catalog);
+app.use('/catalog', catalog); 
 
 app.get('/:page', function(req, res){
 	res.render( `${req.params.page}/index`);
 });
 
-mongoose.connect("mongodb://localhost:27017/diogenes", { useNewUrlParser: true })
+mongoose.connect(`mongodb://localhost:27017/${config.siteName}`, { useNewUrlParser: true })
 	.then(() => {
-	    app.listen(80, function(){
+	    app.listen(config.port, function(){
 	        console.log("Сервер запущен");
 	    });
 	});
