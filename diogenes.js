@@ -33,6 +33,6 @@ app.get('/:page', function(req, res){
 mongoose.connect(`mongodb://localhost:27017/${config.siteName}`, { useNewUrlParser: true })
 	.then(() => {
 	    app.listen(config.port, function(){
-	        console.log("Сервер запущен");
+	        console.log(`Сервер запущен на ${config.port}`);
 	    });
 	});

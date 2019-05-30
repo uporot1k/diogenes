@@ -7,7 +7,9 @@ const Catalog = require('../models/Catalog');
 router.get('/:first', function(req, res) {
   	Catalog.find({}, function(err, data){
         if(err) return console.log(err);
-       	res.render('about/index');
+        //res.render('about/index');
+        res.send(res.params);
+        console.log('111');
     });
 });
 
