@@ -4,5 +4,5 @@ module.exports = {
     devtool: 'source-map',
   },
   publicPath: process.env.NODE_ENV === 'production' ? '/admin/' : '/',
-  outputDir: '../site/admin'
+  outputDir: '../site/admin',
 };
