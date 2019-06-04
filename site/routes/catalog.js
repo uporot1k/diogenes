@@ -3,13 +3,19 @@ const router = express.Router();
 
 const Catalog = require('../models/Catalog');
 
+router.get('/', function(req, res) {
+    Catalog.find({}, function(err, data){
+      if(err) return console.log(err);
+      //res.render('about/index');
+      res.send('11111');
+  });
+});
 
-router.get('/:first', function(req, res) {
+
+router.get(/\w+/, function(req, res) {
   	Catalog.find({}, function(err, data){
         if(err) return console.log(err);
-        //res.render('about/index');
-        res.send(res.params);
-        console.log('111');
+        res.send(req.path.match(/\w+/g));
     });
 });
 

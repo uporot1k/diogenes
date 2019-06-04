@@ -8,11 +8,10 @@ var config = require('./config');
 //routers
 const catalog = require('./routes/catalog');
 
-app.disable('view cache');
 
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads') );
-app.use('/admin', express.static('admin/public') );
+app.use('/admin', express.static('admin') );
 app.set("view engine", "ejs");
 
 
@@ -20,7 +19,11 @@ app.get('/', function(req, res) {
 	res.render('main');
 });
 
-app.get('/admin', function(req, res) {
+app.get(/admin/, function(req, res) {
+	res.sendFile(__dirname + '/admin/index.html');
+});
+
+app.get('/adminTest', function(req, res) {
 	res.render('../adminTest/views/index');
 });
 
